@@ -1,0 +1,28 @@
+<div class="content-container" >
+  <div class="container">
+    <mat-card>
+      <ng-container *ngIf="weather; else loader">
+        <h1>{{weather.main.temp}} °C</h1>
+        <p>Country: {{weather.name}}</p>
+        <div class="details">
+          <div class="item">
+            <ul>
+              <li>Max temp:  {{weather.main.temp_max}} °C</li>
+              <li>Min temp:  {{weather.main.temp_min}} °C</li>
+            </ul>
+          </div>
+          <div class="item">
+            <ul>
+              <li>Pressure:  {{weather.main.pressure}}</li>
+              <li>Humidity:  {{weather.main.humidity}}</li>
+            </ul>
+          </div>
+        </div>
+      </ng-container>
+
+      <ng-template #loader>
+        <h2>Загрузка...</h2>
+      </ng-template>
+    </mat-card>
+  </div>
+</div>
