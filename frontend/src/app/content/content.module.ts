@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
-import { MatCardModule } from '@angular/material/card';
 import { CommonModule } from '@angular/common';
+import { MatCardModule } from '@angular/material/card';
+import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ContentComponent } from './content.component';
 import { ContentServise } from './content.service';
 
@@ -9,12 +12,18 @@ import { ContentServise } from './content.service';
     ContentComponent
   ],
   imports: [
+    CommonModule,
     MatCardModule,
-    CommonModule
+    MatListModule,
+    MatIconModule,
+    MatProgressSpinnerModule
   ],
   exports: [
     ContentComponent,
-    MatCardModule
+    MatCardModule,
+    MatListModule,
+    MatIconModule,
+    MatProgressSpinnerModule
   ],
   providers: [ ContentServise ]
 })

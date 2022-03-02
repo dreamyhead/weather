@@ -8,73 +8,173 @@
 @media only screen and (max-width: 600px) {
 
   mat-card {
-    width: auto;
-    height: 150px;
+
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
     margin: 2rem 0rem;
     border-radius: 10px;
     box-shadow: 1px 5px 10px rgba(201, 200, 200, 0.726) !important;
 
-    h1 {
-      font-size: xx-large;
+    mat-card-title {
+      font-size: 1.25rem;
+      margin: 1rem 0rem 1rem 0rem;
     }
 
-    .details {
-      display: flex;
-      width: 100%;
-      flex-direction: row;
+    mat-spinner {
+      align-self: center;
+    }
 
+    mat-card-content {
+      display: flex;
+      margin: 0rem 2rem;
       .item {
         width: 50%;
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        justify-content: flex-end;
+        align-items: flex-end;
+      }
+      .item1 {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+      }
+      h1 {
+        font-size: 3rem;
+        font-weight: 400;
+      }
+      p {
+        font-size: 1rem;
 
-        li {
-          list-style-type: none;
+      }
+      .SunriseSunset--graphPath--1S5ov {
+        stroke: #e87538;
+        fill: none;
+        stroke-width: 3px;
+        stroke-linecap: round;
+      }
+      .SunriseSunset--graphPath--1S5ov {
+        transform: rotate(180deg);
+      }
+      .datatime {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+
+        .item {
+          width: 50%;
+          display: flex;
+        flex-direction: row;
         }
       }
     }
+
+    mat-list-item {
+      border-top: 1px solid #dedede;
+      .text {
+        width: 50%;
+        font-size: 1rem;
+        font-weight: 500;
+        padding: 0rem 0.5rem;
+      }
+      .value-response {
+        width: 50%;
+        font-size: 1rem;
+        font-weight: 400;
+        text-align: end;
+      }
+    }
+
   }
 }
 
 @media only screen and (min-width: 600px) {
 
   mat-card {
-    width: 45%;
-    height: 150px;
+    width: 70%;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
     margin: 2rem 0rem;
 
     border-radius: 15px;
     box-shadow: 1px 5px 10px rgba(201, 200, 200, 0.726) !important;
 
-    h1 {
-      font-size: xx-large;
+    mat-card-title {
+      font-size: 1.5rem;
+      font-weight: 500;
+      margin: 1rem 0rem 1rem 0rem;
     }
 
-    .details {
-      display: flex;
-      width: 100%;
-      flex-direction: row;
+    mat-spinner {
+      align-self: center;
+    }
 
+    mat-card-content {
+      display: flex;
+      margin: 0rem 2rem;
       .item {
         width: 50%;
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        justify-content: flex-end;
+        align-items: flex-end;
+      }
+      .item1 {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+      }
+      h1 {
+        font-size: 3.5rem;
+        font-weight: 500;
+      }
+      p {
+        font-size: 1rem;
 
-        li {
-          list-style-type: none;
+      }
+      .SunriseSunset--graphPath--1S5ov {
+        stroke: #e87538;
+        fill: none;
+        stroke-width: 3px;
+        stroke-linecap: round;
+      }
+      .SunriseSunset--graphPath--1S5ov {
+        transform: rotate(180deg);
+      }
+      .datatime {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+
+        .item {
+          width: 50%;
+          display: flex;
+        flex-direction: row;
         }
+      }
+
+    }
+    mat-list-item {
+      border-top: 1px solid #dedede;
+      .text {
+        width: 50%;
+        font-size: 1rem;
+        font-weight: 500;
+        padding: 0rem 0.5rem;
+      }
+      .value-response {
+        width: 50%;
+        font-size: 1rem;
+        font-weight: 400;
+        text-align: end;
       }
     }
   }

@@ -1,17 +1,26 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { delay } from 'rxjs/operators'
+import { delay } from 'rxjs/operators';
 
 export interface Weather {
   main: {
     temp: number;
     temp_max: number;
     temp_min: number;
+    feels_like: number;
     humidity: number;
     pressure: number;
   };
-
+  sys: {
+    country: string;
+    sunrise: number;
+    sunset: number;
+  };
+  visibility: number;
+  wind: {
+    speed: number;
+  }
   name: string;
 }
 
