@@ -24,9 +24,9 @@ export class ContentComponent implements OnInit {
           console.log(response);
           this.weather = response;
           let date = new Date(this.weather.sys.sunrise * 1000);
-          this.sunriseTime = date.getHours() + ':' + date.getMinutes();
+          this.sunriseTime = date.toLocaleString('ru-RU', {hour: 'numeric', minute: 'numeric'});
           date = new Date(this.weather.sys.sunset * 1000);
-          this.sunsetTime = date.getHours() + ':' + date.getMinutes();
+          this.sunsetTime = date.toLocaleString('ru-RU', {hour: 'numeric', minute: 'numeric'});
         })
   };
 }
