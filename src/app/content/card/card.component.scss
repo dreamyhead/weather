@@ -79,31 +79,17 @@
     flex-direction: column;
     justify-content: center;
     margin: 2rem 0rem;
-
     border-radius: 15px;
     box-shadow: 1px 5px 10px rgba(201, 200, 200, 0.726) !important;
-
-    mat-card-title {
-      font-size: 1.5rem;
-      font-weight: 500;
-      margin: 1rem 0rem 1rem 0rem;
-    }
-
-    mat-spinner {
-      align-self: center;
-    }
 
     mat-card-content {
       display: flex;
       margin: 0rem 1rem 1.5rem 2rem;
-
       .item {
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
         flex-grow: 1;
       }
-
       .SunriseSunset--graphPath--1S5ov {
         fill: none;
         stroke: #e87538;
@@ -115,7 +101,6 @@
       .item-icon {
           display: flex;
           align-items: flex-end;
-
           .item {
             width: 50%;
             display: flex;

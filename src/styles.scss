@@ -47,6 +47,17 @@ $frontend-theme: mat.define-light-theme((
   .container {
     width: 85%;
   }
+
+  mat-card-title {
+    font-size: 1.5rem;
+      font-weight: 500;
+      margin: 1rem 0rem 1rem 0rem;
+  }
+
+
+  mat-spinner {
+    align-self: center;
+  }
 }
 body {
   margin: 0;
