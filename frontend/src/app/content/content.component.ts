@@ -1,6 +1,5 @@
-import { Component, OnInit} from '@angular/core';
-import { ContentServise } from './content.service';
-import { Weather } from './content.service';
+import { Component, Input} from '@angular/core';
+import { Weather } from '../toolbar/toolbar.service';
 
 @Component({
   selector: 'app-content',
@@ -8,25 +7,8 @@ import { Weather } from './content.service';
   styleUrls: ['./content.component.scss']
 })
 
-export class ContentComponent implements OnInit {
+export class ContentComponent{
 
+  @Input() weather: Weather;
 
-
-  constructor(private contentService: ContentServise) {}
-
-  weather: Weather;
-  city: string = "Moscow";
-  sunriseTime: string;
-  sunsetTime: string;
-  ngOnInit() {
-    this.contentService.fetchWeather()
-        .subscribe(response =>{
-          console.log(response);
-          this.weather = response;
-          let date = new Date(this.weather.sys.sunrise * 1000);
-          this.sunriseTime = date.toLocaleString('ru-RU', {hour: 'numeric', minute: 'numeric'});
-          date = new Date(this.weather.sys.sunset * 1000);
-          this.sunsetTime = date.toLocaleString('ru-RU', {hour: 'numeric', minute: 'numeric'});
-        })
-  };
 }

@@ -26,13 +26,13 @@ export interface Weather {
 
 @Injectable()
 
-export class ContentServise {
+export class ToolbarService {
 
   constructor(private http: HttpClient) {}
 
-  fetchWeather(): Observable<Weather> {
-    return this.http.get<Weather>(`https://api.openweathermap.org/data/2.5/weather?q=Moscow&units=metric&appid=4f592b2566721ec99b69bb95df24da9a`)
-      .pipe(delay(1000))
-  };
+  sendRequest(city: string): Observable<Weather> {
+    console.log(city);
 
+    return this.http.get<Weather>(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=4f592b2566721ec99b69bb95df24da9a`)
+  };
 }

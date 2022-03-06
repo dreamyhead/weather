@@ -1,8 +1,8 @@
 <div class="content-container" >
   <div class="container">
+
     <mat-card>
       <ng-container *ngIf="weather; else loader">
-
         <mat-card-header>
           <mat-card-title>Weather Today in {{weather.name}}, {{weather.sys.country}}</mat-card-title>
         </mat-card-header>
@@ -18,8 +18,8 @@
                 <path d="M -13.5 26.5 a 1 1 0 0 0 80 0" class="SunriseSunset--graphPath--1S5ov" style="transform-origin: 40px 40px;"></path>
               </svg>
               <span class="item-icon">
-                <p class="item"><mat-icon style="color: #febc11;">arrow_upward</mat-icon> {{sunriseTime}}</p>
-                <p class="item"><mat-icon style="color: #febc11;">arrow_downward</mat-icon> {{sunsetTime}}</p>
+                <!-- <p class="item"><mat-icon style="color: #febc11;">arrow_upward</mat-icon> {{sunriseTime}}</p> -->
+                <!-- <p class="item"><mat-icon style="color: #febc11;">arrow_downward</mat-icon> {{sunsetTime}}</p> -->
               </span>
             </div>
           </div>
@@ -59,10 +59,12 @@
 
         </mat-list>
       </ng-container>
-
       <ng-template #loader>
         <mat-spinner [diameter]="50"></mat-spinner>
       </ng-template>
+
     </mat-card>
+
+
   </div>
 </div>

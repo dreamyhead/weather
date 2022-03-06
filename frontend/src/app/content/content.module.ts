@@ -5,7 +5,6 @@ import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ContentComponent } from './content.component';
-import { ContentServise } from './content.service';
 
 @NgModule({
   declarations: [
@@ -24,8 +23,7 @@ import { ContentServise } from './content.service';
     MatListModule,
     MatIconModule,
     MatProgressSpinnerModule
-  ],
-  providers: [ ContentServise ]
+  ]
 })
 
 export class ContentModule { }
