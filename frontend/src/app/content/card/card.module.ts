@@ -4,23 +4,21 @@ import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { ContentComponent } from './content.component';
-import { CardModule } from './card/card.module';
+import { CardComponent } from './card.component';
 
 @NgModule({
   declarations: [
-    ContentComponent
+    CardComponent
   ],
   imports: [
     CommonModule,
-    CardModule,
     MatCardModule,
     MatListModule,
     MatIconModule,
     MatProgressSpinnerModule
   ],
   exports: [
-    ContentComponent,
+    CardComponent,
     MatCardModule,
     MatListModule,
     MatIconModule,
@@ -28,4 +26,4 @@ import { CardModule } from './card/card.module';
   ]
 })
 
-export class ContentModule { }
+export class CardModule {}
