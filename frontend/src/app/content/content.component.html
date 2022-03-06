@@ -9,7 +9,7 @@
 
         <mat-card-content>
            <div class="item">
-            <span style="font-size: 3.5rem; font-weight: 400;">{{weather.main.temp | number: '1.0-0'}}°</span>
+            <span style="font-size: 3.6rem; font-weight: 400;">{{weather.main.temp | number: '1.0-0'}}°</span>
             <span style="font-size: 1rem;">Feels Like</span>
           </div>
           <div style="display: block;">
@@ -18,8 +18,8 @@
                 <path d="M -13.5 26.5 a 1 1 0 0 0 80 0" class="SunriseSunset--graphPath--1S5ov" style="transform-origin: 40px 40px;"></path>
               </svg>
               <span class="item-icon">
-                <!-- <p class="item"><mat-icon style="color: #febc11;">arrow_upward</mat-icon> {{sunriseTime}}</p> -->
-                <!-- <p class="item"><mat-icon style="color: #febc11;">arrow_downward</mat-icon> {{sunsetTime}}</p> -->
+                <p class="item"><mat-icon style="color: #febc11;">arrow_upward</mat-icon> {{weather.sys.sunrise*1000 | date: 'HH:mm'}}</p>
+                <p class="item"><mat-icon style="color: #febc11;">arrow_downward</mat-icon> {{weather.sys.sunset*1000 | date: 'HH:mm'}}</p>
               </span>
             </div>
           </div>
