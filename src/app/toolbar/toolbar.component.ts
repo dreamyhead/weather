@@ -18,6 +18,11 @@ export class ToolbarComponent{
   constructor(private toolbarService: ToolbarService) {}
 
   sendRequest(city: string) {
+
+    if (!this.city.trim()) {
+      return
+    }
+
     this.toolbarService.sendRequest(city)
         .subscribe(response =>{
           this.weather = response;

@@ -31,6 +31,6 @@ export class ToolbarService {
   constructor(private http: HttpClient) {}
 
   sendRequest(city: string): Observable<Weather> {
-    return this.http.get<Weather>(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=4f592b2566721ec99b69bb95df24da9a`)
+      return this.http.get<Weather>(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=4f592b2566721ec99b69bb95df24da9a`)
   };
 }
