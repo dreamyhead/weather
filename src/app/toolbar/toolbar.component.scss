@@ -37,11 +37,17 @@
           height: 40px;
           color: #fff;
           text-align: center;
-          font-size: large;
           font-family: 'Roboto', sans-serif;
           border-radius: 20px;
           background: hsla(0,0%,100%,.2);
           margin: 0rem 0.25rem;
+
+          &::-webkit-input-placeholder {
+            color: #fff;
+          }
+          &:focus::-webkit-input-placeholder {
+            opacity: 0;
+          }
           &:focus {
             outline: 5px auto #fff;
           }
@@ -109,13 +115,18 @@
           height: 40px;
           color: #fff;
           text-align: center;
+          font-family: 'Roboto', sans-serif;
           font-size: medium;
-
-
           margin: 0rem 0.5rem;
           border-radius: 20px;
           background: hsla(0,0%,100%,.2);
 
+          &::-webkit-input-placeholder {
+            color: #fff;
+          }
+          &:focus::-webkit-input-placeholder {
+            opacity: 0;
+          }
           &:focus {
             outline: 5px auto #fff;
           }

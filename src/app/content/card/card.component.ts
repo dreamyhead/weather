@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Weather } from '../../toolbar/toolbar.service';
 
 @Component({
@@ -7,8 +7,11 @@ import { Weather } from '../../toolbar/toolbar.service';
   styleUrls: ['./card.component.scss']
 })
 
-export class CardComponent {
+export class CardComponent implements OnInit{
 
   @Input() weather: Weather;
 
+  ngOnInit() {
+    console.log(this.weather.main.temp_max)
+  }
 }

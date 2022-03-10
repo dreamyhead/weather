@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Output, OnInit } from '@angular/core';
 import { ToolbarService, Weather } from './toolbar.service';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { delay } from 'rxjs/operators';
 
 @Component({
@@ -9,26 +10,43 @@ import { delay } from 'rxjs/operators';
 })
 
 
-export class ToolbarComponent{
+export class ToolbarComponent implements OnInit{
 
-  city: string;
   weather: Weather;
+  form: FormGroup;
+
   @Output() addWeather: EventEmitter<Weather> = new EventEmitter<Weather>();
 
   constructor(private toolbarService: ToolbarService) {}
 
-  sendRequest() {
+  ngOnInit(){
+    this.form = new FormGroup({
+      city: new FormControl(null,[
+          Validators.required,
+          Validators.maxLength(20)
+        ]
+      )
+    });
+  }
 
-    if (!this.city.trim()) {
-      return
-    }
 
-    this.toolbarService.sendRequest(this.city.trim())
+  submit() {
+    if (this.form.valid) {
+      const formData = {...this.form.value}
+      console.log(formData.city)
+      if (!formData.city.trim()) {
+       return
+      }
+
+      this.toolbarService.sendRequest(formData.city.trim())
         .subscribe(response =>{
           this.weather = response;
+          console.log(response)
           this.addWeather.emit(this.weather);
-          this.city = '';
-    });
+      });
+
+      this.form.reset()
+    }
   }
 
 }

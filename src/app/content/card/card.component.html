@@ -1,13 +1,13 @@
 <mat-card>
   <ng-container *ngIf="weather; else loader">
     <mat-card-header>
-      <mat-card-title>Weather Today in {{weather.name}}, {{weather.sys.country}}</mat-card-title>
+      <mat-card-title>Погода на сегодня: {{weather.name}}, {{weather.sys.country}}</mat-card-title>
     </mat-card-header>
 
     <mat-card-content>
        <div class="item">
         <span style="font-size: 3.6rem; font-weight: 400;">{{weather.main.temp | number: '1.0-0'}}°</span>
-        <span style="font-size: 1rem;">Feels Like</span>
+        <span style="font-size: 1rem;">Ощущается как {{weather.main.feels_like| number: '1.0-0'}}°</span>
       </div>
       <div style="display: block;">
         <div class="item">
@@ -26,38 +26,38 @@
     <mat-list>
       <mat-list-item>
         <mat-icon>thermostat</mat-icon>
-        <span class="text">High/Low:</span>
+        <span class="text">Макс./Мин.</span>
         <span class="value-response">{{weather.main.temp_max | number: '1.0-0'}}°/{{weather.main.temp_min | number: '1.0-0'}}°</span>
       </mat-list-item>
 
       <mat-list-item>
         <mat-icon>air</mat-icon>
-        <span class="text">Wind:</span>
+        <span class="text">Ветер</span>
         <span class="value-response">{{weather.wind.speed}} mph</span>
       </mat-list-item>
 
       <mat-list-item>
         <mat-icon>water_drop</mat-icon>
-        <span class="text">Humidity:</span>
+        <span class="text">Влажность</span>
         <span class="value-response">{{weather.main.humidity}}%</span>
       </mat-list-item>
 
       <mat-list-item>
         <mat-icon>compress</mat-icon>
-        <span class="text">Pressure:</span>
+        <span class="text">Давление</span>
         <span class="value-response">{{weather.main.pressure}} mb</span>
       </mat-list-item>
 
       <mat-list-item>
         <mat-icon>visibility</mat-icon>
-        <span class="text">Visibility:</span>
+        <span class="text">Видимость</span>
         <span class="value-response">{{weather.visibility / 1000}} km</span>
       </mat-list-item>
 
     </mat-list>
   </ng-container>
   <ng-template #loader>
-    <mat-spinner [diameter]="50"></mat-spinner>
+
   </ng-template>
 
 </mat-card>
