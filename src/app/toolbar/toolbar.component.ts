@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output, OnInit } from '@angular/core';
-import { ToolbarService, Weather } from './toolbar.service';
+import { ToolbarService, Weather, WeatherFiveDays } from './toolbar.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { delay } from 'rxjs/operators';
 
@@ -12,10 +12,13 @@ import { delay } from 'rxjs/operators';
 
 export class ToolbarComponent implements OnInit{
 
-  weather: Weather;
   form: FormGroup;
+  weather: Weather;
+  weatherFiveDays: WeatherFiveDays;
+
 
   @Output() addWeather: EventEmitter<Weather> = new EventEmitter<Weather>();
+  @Output() addWeatherFiveDays: EventEmitter<WeatherFiveDays> = new EventEmitter<WeatherFiveDays>();
 
   constructor(private toolbarService: ToolbarService) {}
 
@@ -31,9 +34,11 @@ export class ToolbarComponent implements OnInit{
 
 
   submit() {
+
     if (this.form.valid) {
       const formData = {...this.form.value}
       console.log(formData.city)
+
       if (!formData.city.trim()) {
        return
       }
@@ -43,7 +48,14 @@ export class ToolbarComponent implements OnInit{
           this.weather = response;
           console.log(response)
           this.addWeather.emit(this.weather);
-      });
+        });
+
+      this.toolbarService.sendFiveDaysRequest(formData.city.trim())
+        .subscribe(response =>{
+          this.weatherFiveDays = response;
+          console.log(this.weatherFiveDays);
+          this.addWeatherFiveDays.emit(this.weatherFiveDays);
+        });
 
       this.form.reset()
     }

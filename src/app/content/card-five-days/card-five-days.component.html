@@ -1,0 +1,12 @@
+<mat-card>
+  <ng-container *ngIf="weatherFiveDays; else loader">
+    <div class="item" *ngFor="let day of weatherFiveDays.list">
+        <h3>{{day.dt*1000 | date: 'MMMM d'}} </h3>
+        <h3>{{day.dt*1000 | date: 'HH:mm:ss'}} </h3>
+        <p> {{day.main.temp}}</p>
+    </div>
+  </ng-container>
+  <ng-template #loader>
+
+  </ng-template>
+</mat-card>

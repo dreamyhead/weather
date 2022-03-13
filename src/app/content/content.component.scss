@@ -3,4 +3,42 @@
 
   display: flex;
   justify-content: center;
+
 }
+
+@media only screen and (max-width: 600px) {
+  .cards-box {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .cards-box {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+
+    .left-box {
+      width: 60%;
+
+      app-card-main {
+        width: 50%;
+      }
+
+      app-card {
+        width: 50%;
+      }
+    }
+
+    .right-box {
+      width: 40%;
+
+      app-card-five-days {
+        width: 50%;
+      }
+    }
+  }
+}
+

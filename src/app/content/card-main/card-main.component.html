@@ -1,0 +1,16 @@
+<mat-card>
+  <ng-container *ngIf="weather">
+    <mat-card-header>
+      <mat-card-title>
+        <span>{{weather.name}}</span>, по состоянию на {{weather.dt*1000 | date: "HH:mm zzz"}}
+      </mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <span>{{weather.main.temp | number: "1.0-0"}}°</span>
+      <p *ngFor="let title of weather.weather">
+        {{title.description}}
+      </p>
+    </mat-card-content>
+  </ng-container>
+</mat-card>

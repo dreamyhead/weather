@@ -4,32 +4,23 @@ import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { ContentComponent } from './content.component';
-import { CardModule } from './card/card.module';
-import { CardMainModule } from './card-main/card-main.module';
-import { CardFiveDaysModule } from "./card-five-days/card-five-days.module";
+import { CardMainComponent } from './card-main.component';
+
 
 @NgModule({
   declarations: [
-    ContentComponent
+    CardMainComponent
   ],
   imports: [
     CommonModule,
-    CardModule,
-    CardMainModule,
-    CardFiveDaysModule,
     MatCardModule,
     MatListModule,
     MatIconModule,
     MatProgressSpinnerModule
   ],
   exports: [
-    ContentComponent,
-    MatCardModule,
-    MatListModule,
-    MatIconModule,
-    MatProgressSpinnerModule
-  ]
+    CardMainComponent
+  ],
+  providers: [],
 })
-
-export class ContentModule { }
+export class CardMainModule {}

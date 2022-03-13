@@ -1,0 +1,28 @@
+@media only screen and (max-width: 600px) {
+  mat-card {
+    display: flex;
+    flex-wrap: wrap;
+    height: 400px;
+    margin: 2rem 0rem;
+    border-radius: 15px;
+    box-shadow: 1px 5px 10px rgba(201, 200, 200, 0.726) !important;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  mat-card {
+    display: flex;
+    flex-wrap: wrap;
+    height: 635px;
+    margin: 2rem 0rem;
+    border-radius: 15px;
+    box-shadow: 1px 5px 10px rgba(201, 200, 200, 0.726) !important;
+
+    .item {
+      width: 12.5%;
+      h3 {
+        font-size: 1rem;
+      }
+    }
+  }
+}

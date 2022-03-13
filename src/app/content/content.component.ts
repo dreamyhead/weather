@@ -1,5 +1,5 @@
 import { Component, Input} from '@angular/core';
-import { Weather } from '../toolbar/toolbar.service';
+import { Weather, WeatherFiveDays } from '../toolbar/toolbar.service';
 
 @Component({
   selector: 'app-content',
@@ -10,5 +10,6 @@ import { Weather } from '../toolbar/toolbar.service';
 export class ContentComponent{
 
   @Input() weather: Weather;
+  @Input() weatherFiveDays: WeatherFiveDays;
 
 }

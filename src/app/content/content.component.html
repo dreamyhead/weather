@@ -1,5 +1,19 @@
 <div class="content-container" >
   <div class="container">
-    <app-card [weather]="weather"></app-card>
+
+    <div class="cards-box">
+      <ng-container *ngIf="weather; else loader">
+        <div class="left-box">
+          <app-card-main [weather]="weather"></app-card-main>
+          <app-card [weather]="weather"></app-card>
+        </div>
+        <div class="right-box">
+          <app-card-five-days [weatherFiveDays]="weatherFiveDays"></app-card-five-days>
+        </div>
+      </ng-container>
+      <ng-template #loader>
+        <div>Введите город</div>
+      </ng-template>
+    </div>
   </div>
 </div>

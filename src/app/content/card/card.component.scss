@@ -1,12 +1,11 @@
 @media only screen and (max-width: 600px) {
 
   mat-card {
-
     display: flex;
-    height: 420px;
+    height: 430px;
     flex-direction: column;
     justify-content: center;
-    margin: 2rem 0rem;
+    margin: 0rem;
     border-radius: 10px;
     box-shadow: 1px 5px 10px rgba(201, 200, 200, 0.726) !important;
 
@@ -73,12 +72,11 @@
 @media only screen and (min-width: 600px) {
 
   mat-card {
-    width: 60%;
-    height: 420px;
+    height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 2rem 0rem;
+    margin: 1rem 2rem 0rem 0rem;
     border-radius: 15px;
     box-shadow: 1px 5px 10px rgba(201, 200, 200, 0.726) !important;
 
