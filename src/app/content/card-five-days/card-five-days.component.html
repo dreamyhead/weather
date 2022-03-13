@@ -1,9 +1,20 @@
 <mat-card>
   <ng-container *ngIf="weatherFiveDays; else loader">
-    <div class="item" *ngFor="let day of weatherFiveDays.list">
-        <h3>{{day.dt*1000 | date: 'MMMM d'}} </h3>
-        <h3>{{day.dt*1000 | date: 'HH:mm:ss'}} </h3>
-        <p> {{day.main.temp}}</p>
+    <mat-card-header>
+      <mat-card-title>Погода на 48 часов</mat-card-title>
+    </mat-card-header>
+
+    <div class="weather-items">
+      <div class="item" *ngFor="let day of weatherFiveDays.list">
+        <div class="left">
+          <p>{{day.dt*1000 | date: 'd MMMM'}}</p>
+          <p>{{day.dt*1000 | date: 'HH:mm'}}</p>
+        </div>
+        <div class="right">
+          <p class="icon"><mat-icon>thermostat</mat-icon><span>{{day.main.temp | number: '1.0-0'}}°</span></p>
+          <p class="icon"><mat-icon>air</mat-icon><span>{{day.wind.speed | number: '1.0-0'}} mph</span></p>
+        </div>
+      </div>
     </div>
   </ng-container>
   <ng-template #loader>

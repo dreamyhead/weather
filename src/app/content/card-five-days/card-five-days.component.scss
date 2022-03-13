@@ -2,10 +2,68 @@
   mat-card {
     display: flex;
     flex-wrap: wrap;
-    height: 400px;
+    padding: 0;
     margin: 2rem 0rem;
     border-radius: 15px;
     box-shadow: 1px 5px 10px rgba(201, 200, 200, 0.726) !important;
+
+    mat-card-header {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      border-radius: 15px 15px 0px 0px;
+      background-color: rgba(199, 199, 199, 0.61);
+
+      mat-card-title {
+        font-size: 1.5rem;
+        padding: 1rem 1rem;
+        span {
+          font-weight: 600;
+        }
+      }
+    }
+
+    .weather-items {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      .item {
+        width: 100%;
+        display: flex;
+
+        border-top: 1px solid #dedede;
+
+        .left {
+          width: 40%;
+          display: flex;
+          flex-direction: column;
+          padding: 1rem 0.5rem;
+        }
+
+        .right {
+          width: 60%;
+          display: flex;
+          padding: 1rem 0.5rem;
+          align-items: center;
+          justify-content: flex-end;
+          p {
+            padding: 0rem;
+            &.icon {
+              width: 50%;
+              display: flex;
+              font-size: 1rem;
+              align-items: center;
+              flex-direction: row;
+            }
+            span {
+              padding-left: 0.5rem;
+            }
+          }
+        }
+      }
+    }
   }
 }
 
@@ -13,15 +71,65 @@
   mat-card {
     display: flex;
     flex-wrap: wrap;
-    height: 635px;
+    padding: 0;
     margin: 2rem 0rem;
     border-radius: 15px;
     box-shadow: 1px 5px 10px rgba(201, 200, 200, 0.726) !important;
 
-    .item {
-      width: 12.5%;
-      h3 {
-        font-size: 1rem;
+    mat-card-header {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      border-radius: 15px 15px 0px 0px;
+      background-color: rgba(199, 199, 199, 0.61);
+      mat-card-title {
+        font-size: 1.5rem;
+        padding: 0rem 1rem;
+        span {
+          font-weight: 600;
+        }
+      }
+    }
+
+    .weather-items {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      .item {
+        width: 50%;
+        display: flex;
+
+        border-top: 1px solid #dedede;
+
+        .left {
+          width: 40%;
+          display: flex;
+          flex-direction: column;
+          padding: 1rem 0.5rem;
+        }
+
+        .right {
+          width: 60%;
+          display: flex;
+          padding: 1rem 0.5rem;
+          align-items: center;
+          justify-content: flex-end;
+          p {
+            padding: 0rem;
+            &.icon {
+              width: 50%;
+              display: flex;
+              font-size: 1rem;
+              align-items: center;
+              flex-direction: row;
+            }
+            span {
+              padding-left: 0.5rem;
+            }
+          }
+        }
       }
     }
   }

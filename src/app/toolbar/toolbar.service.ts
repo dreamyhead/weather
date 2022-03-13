@@ -46,7 +46,6 @@ export interface WeatherFiveDays {
           speed: number;
         };
         visibility: number;
-        dt_txt: string;
       }
     ]
 }
@@ -58,7 +57,7 @@ export class ToolbarService  {
   constructor(private http: HttpClient) {}
 
   sendFiveDaysRequest(city: string): Observable<WeatherFiveDays>{
-    return this.http.get<WeatherFiveDays>(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&lang=ru&units=metric&appid=4f592b2566721ec99b69bb95df24da9a`)
+    return this.http.get<WeatherFiveDays>(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&cnt=16&lang=ru&units=metric&appid=4f592b2566721ec99b69bb95df24da9a`)
   };
 
   sendRequest(city: string): Observable<Weather> {
