@@ -1,4 +1,4 @@
 <div class="wrapper">
-    <app-toolbar (addWeather)="updateWeather($event)" (addWeatherFiveDays)="updateWeatherFiveDays($event)"></app-toolbar>
-    <app-content [weather]="weather" [weatherFiveDays]="weatherFiveDays"></app-content>
+    <app-toolbar (addWeather)="updateWeather($event)" (addWeatherFiveDays)="updateWeatherFiveDays($event)" (addError)="updateError($event)"></app-toolbar>
+    <app-content [weather]="weather" [weatherFiveDays]="weatherFiveDays" [error]="error"></app-content>
 </div>

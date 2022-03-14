@@ -28,9 +28,11 @@ export interface Weather {
     speed: number;
   }
   name: string;
+  cod: string;
 }
 
 export interface WeatherFiveDays {
+    cod: string;
     list: [
       {
         dt: number;

@@ -10,6 +10,7 @@ import { Weather, WeatherFiveDays } from '../toolbar/toolbar.service';
 export class ContentComponent{
 
   @Input() weather: Weather;
+  @Input() error: string;
   @Input() weatherFiveDays: WeatherFiveDays;
 
 }

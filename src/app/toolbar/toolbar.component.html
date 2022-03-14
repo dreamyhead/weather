@@ -18,7 +18,7 @@
           <form [formGroup]="form" (ngSubmit)="submit()">
             <input type="text"
               formControlName="city"
-              placeholder="Поиск по городу или индексу"
+              placeholder={{error}}
             >
             <button mat-button type="submit">Искать</button>
           </form>

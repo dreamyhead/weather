@@ -13,10 +13,12 @@ import { delay } from 'rxjs/operators';
 export class ToolbarComponent implements OnInit{
 
   form: FormGroup;
+  error: string;
   weather: Weather;
   weatherFiveDays: WeatherFiveDays;
 
 
+  @Output() addError: EventEmitter<string> = new EventEmitter<string>();
   @Output() addWeather: EventEmitter<Weather> = new EventEmitter<Weather>();
   @Output() addWeatherFiveDays: EventEmitter<WeatherFiveDays> = new EventEmitter<WeatherFiveDays>();
 
@@ -48,6 +50,10 @@ export class ToolbarComponent implements OnInit{
           this.weather = response;
           console.log(response)
           this.addWeather.emit(this.weather);
+        }, error => {
+          this.error = error.error.message;
+          console.log(this.error);
+          this.addError.emit(this.error);
         });
 
       this.toolbarService.sendFiveDaysRequest(formData.city.trim())

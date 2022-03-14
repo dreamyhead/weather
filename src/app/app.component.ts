@@ -11,8 +11,14 @@ import { Weather, WeatherFiveDays } from './toolbar/toolbar.service';
 
 export class AppComponent{
 
+  error: string;
   weather: Weather;
   weatherFiveDays: WeatherFiveDays;
+
+  updateError(error: string) {
+    this.error = error;
+    console.log(this.error)
+  }
 
   updateWeather(weather: Weather) {
     this.weather = weather;
